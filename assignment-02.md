@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:**_____Sean Hall____________________
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -54,13 +54,16 @@ and push to your github repository.
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  
-.  
+.  The depth here is n
+  work lvl 0: n^c
+  work lvl 1: (n-1)^c
+  work lvl 2: (n-2)^c. 
+  While the work at each level decreases, it does not decrease geometrically and thus each level's work can be treated as n^c. Thus the total work is n^c * n. Thus, O(n^(c+1))
 .  
 .  
 .  
   * $W(n)=W(\sqrt{n})+1$
-
+    Becauses the input is decreases by a square root, not every input results in a nice base case. Most result in a floating number. The tree depth is n^(1/2k). When we want the final node to 1, we have to set n^(1/2k) = 1. We can take the log_base_n of each side to get 1/2k = 0 (because log base anything of 1 equals 0). However, this is only true as k = infinity. Thus our base case will be different for each input. So we can assume O(loglogn).
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
 
